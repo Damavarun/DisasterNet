@@ -69,6 +69,3 @@ Pending means saved locally and waiting to publish. Published means broadcast, n
 - backend/src: API, MySQL store, peer network, and retry/sync service.
 - backend/sql/schema.sql: rooms, identities, messages, and receipts.
 - frontend/src: React dashboard and live connection client.
-- The original Go prototype has been removed; the application runs entirely on JavaScript.
-
-Migrated from the supplied DisasterNet prototype originally credited to Abhinav Jha. The old demo and screenshot describe that prototype, not validation of this migration.
