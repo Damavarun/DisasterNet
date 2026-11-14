@@ -1,0 +1,19 @@
+{
+  "name": "disasternet",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first emergency communication over a peer-to-peer LAN network",
+  "engines": { "node": ">=22.14.0" },
+  "workspaces": ["backend", "frontend"],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c cyan,green \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "start": "npm run start -w backend",
+    "build": "npm run build -w frontend",
+    "lint": "npm run lint -w frontend",
+    "test": "npm run test -w backend",
+    "test:integration": "npm run test:integration -w backend",
+    "db:migrate": "npm run db:migrate -w backend"
+  },
+  "devDependencies": { "concurrently": "^9.2.1" }
+}

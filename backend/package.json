@@ -1,0 +1,30 @@
+{
+  "name": "@disasternet/backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "db:migrate": "node src/migrate.js",
+    "test": "node --test test/message.test.js",
+    "test:integration": "node --test --test-concurrency=1 test/integration.test.js"
+  },
+  "dependencies": {
+    "@libp2p/crypto": "^5.2.0",
+    "@libp2p/gossipsub": "^17.2.1",
+    "@libp2p/identify": "^4.1.18",
+    "@libp2p/mdns": "^12.0.36",
+    "@libp2p/noise": "^17.0.7",
+    "@libp2p/tcp": "^11.0.32",
+    "@libp2p/yamux": "^8.0.7",
+    "@multiformats/multiaddr": "^13.0.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "libp2p": "^3.5.1",
+    "mysql2": "^3.15.3",
+    "ws": "^8.18.3",
+    "zod": "^4.1.12"
+  }
+}
