@@ -58,7 +58,7 @@ npm run test:integration
 
 Integration tests create uniquely named dn_it_* databases and remove only those databases afterward. Optional TEST_MYSQL_HOST and TEST_MYSQL_PORT select the test server. Tests cover two actual libp2p nodes, HTTP authentication, WebSocket updates, committed receipts, retries, duplicate suppression, restart recovery, synchronization, expiration, and mDNS.
 
-Build, lint, and three unit tests passed during migration. Integration execution was blocked by local socket permissions (EACCES connecting to isolated MySQL); mDNS discovery also timed out in this environment; cross-device operation remains to be validated. For acceptance, disconnect internet while keeping LAN active, exchange messages between two laptops, restart a node, and verify pending messages and history catch-up.
+Build, lint, and three unit tests passed during migration. The MySQL + HTTP + WebSocket integration suite with two local libp2p nodes passed all seven checks. Automatic mDNS discovery timed out in this environment; manual peer connection works in the local integration test. Physical cross-device operation remains to be validated. For acceptance, disconnect internet while keeping LAN active, exchange messages between two laptops, restart a node, and verify pending messages and history catch-up.
 
 ## Status semantics and limitations
 
@@ -69,6 +69,6 @@ Pending means saved locally and waiting to publish. Published means broadcast, n
 - backend/src: API, MySQL store, peer network, and retry/sync service.
 - backend/sql/schema.sql: rooms, identities, messages, and receipts.
 - frontend/src: React dashboard and live connection client.
-- legacy-go: original Go prototype retained for reference; not used by the Node application.
+- The original Go prototype has been removed; the application runs entirely on JavaScript.
 
 Migrated from the supplied DisasterNet prototype originally credited to Abhinav Jha. The old demo and screenshot describe that prototype, not validation of this migration.
